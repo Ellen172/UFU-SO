@@ -28,16 +28,7 @@ int main(){
     aux = strlen(buffer)+2; // define tamanho do buffer e do caminho_destino
     char *caminho_destino = (char *)malloc(sizeof(char)*aux); // cria string caminho_destino com tamanho dinamico
     strcpy(caminho_destino, buffer); // copia do buffer para caminho_destino
-    destino = fopen(caminho_destino, "w");
-    while(destino == NULL){ // verificar se o caminho especificado existe
-        printf("Caminho não encontrado!\n");
-        printf("Digite o arquivo de destino: "); 
-        scanf("%s", buffer); // le arquivo de destino em um buffer
-        aux = strlen(buffer)+2; // define tamanho do buffer e do caminho_destino
-        char *caminho_destino = (char *)malloc(sizeof(char)*aux); // cria string caminho_destino com tamanho dinamico
-        strcpy(caminho_destino, buffer); // copia do buffer para caminho_destino
-        destino = fopen(caminho_destino, "w");
-    }
+    destino = fopen(caminho_destino, "w"); // gera arquivo novo para copiar origem
 
     // ler origem
     char *result;
