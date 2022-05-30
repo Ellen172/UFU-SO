@@ -38,8 +38,7 @@ int main(){
         result = fgets(buffer, 100, origem); 
         if(result){
             // se foi possivel ler
-            printf("%s", buffer);
-            fprintf(destino, "%s", buffer);
+            fprintf(destino, "%s", buffer); // printa o que foi lido para o arquivo de destino
             i++;
         }
     }
