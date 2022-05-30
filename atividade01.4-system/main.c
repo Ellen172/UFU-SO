@@ -14,37 +14,41 @@ através da versão Windows deste programa usando um debug. */
 #include <string.h>
 
 int main(){
-    FILE *origem=NULL, *destino=NULL;
-    char buffer[10000];
+    char buffer[10000], command[100];
     int aux;
 
-    printf("Digite o arquivo de origem: ");
-    scanf("%s", buffer); // le o arquivo de origem em um buffer
-    aux = strlen(buffer)+2; // tamanho do buffer e do caminho_origem
-    char *caminho_origem = (char *)malloc(sizeof(char)*aux); // string caminho_origem com tamanho dinamico
-    strcpy(caminho_origem, buffer); // copia do buffer para caminho_origem
-    origem = fopen(caminho_origem, "r");    
-    while(origem == NULL){ // verificar se o caminho especificado existe
-        printf("Caminho não encontrado!\n");
-        printf("Digite o arquivo de origem: ");
-        scanf("%s", buffer); // le o arquivo de origem em um buffer
-        aux = strlen(buffer)+2; // tamanho do buffer e do caminho_origem
-        char *caminho_origem = (char *)malloc(sizeof(char)*aux); // string caminho_origem com tamanho dinamico
-        strcpy(caminho_origem, buffer); // copia do buffer para caminho_origem
-        origem = fopen(caminho_origem, "r"); 
-    }
+    // criar strings com caminhos dos arquivos
 
-    printf("Digite o arquivo de destino: "); 
-    scanf("%s", buffer); // le arquivo de destino em um buffer
-    aux = strlen(buffer)+2; // define tamanho do buffer e do caminho_destino
-    char *caminho_destino = (char *)malloc(sizeof(char)*aux); // cria string caminho_destino com tamanho dinamico
-    strcpy(caminho_destino, buffer); // copia do buffer para caminho_destino
-    destino = fopen(caminho_destino, "w"); // gera arquivo novo para copiar origem
+    // le o caminho_origem em um buffer
+    printf("Digite o caminho do arquivo de origem: "); 
+    scanf("%s", buffer); 
+    // salvar caminho_origem
+    aux = strlen(buffer)+2;
+    char caminho_origem[aux]; 
+    strcpy(caminho_origem, buffer); 
 
-    
+    // le o arquivo de destino em  um buffer
+    printf("Digite o caminho do arquivo de destino: "); 
+    scanf("%s", buffer); 
+    //salvar caminho_destino
+    aux = strlen(buffer)+2;
+    char caminho_destino[aux];
+    strcpy(caminho_destino, buffer); 
 
-    fclose(origem);
-    fclose(destino);
+    /*
+    char caminho_origem[10000], caminho_destino[10000];
+    strcpy(caminho_origem, "/home/ellen/Documentos/UFU-SO/atividade01.4-system/arquivo-origem");
+    strcpy(caminho_destino, "/home/ellen/Documentos/UFU-SO/atividade01.4-system/arquivo-destino");
+    */
+
+    // criar comando
+    strcpy(command, "cp ");
+    strcat(command, caminho_origem);
+    strcat(command, " "); 
+    strcat(command, caminho_destino);
+
+    // executar chamada de comando
+    system(command);
 
     return 0;
 }
