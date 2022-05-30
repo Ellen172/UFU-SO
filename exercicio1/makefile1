@@ -1,10 +1,11 @@
-CC = 
+CC = gcc
 CFLAGS = -g 
 
-PROGRAMS = loop-malloc\
+PROGRAMS = loop-malloc.c pilha.c 
            
 
 all: $(PROGRAMS)
+	$(CC) -o program $(PROGRAMS) $(CFLAGS)
 
 clean:
 	rm -f *~ $(PROGRAMS)

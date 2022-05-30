@@ -9,7 +9,6 @@ void f() {
 
   for (i = 0; i < 16; i++){
     v[i] = &i;
-    printf("v = %d\n", &v[i]);
   }
 }
 
