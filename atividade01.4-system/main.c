@@ -1,3 +1,14 @@
+/* 4- Nas aulas foram demonstrados alguns exemplos de chamadas de sistema em ambiente
+Linux, então, escreva um programa em linguagem C que permita copiar o conteúdo de um
+arquivo e gerar um novo arquivo. Este programa deve primeiramente solicitar ao usuário o nome
+dos arquivos de origem e destino. Certifique-se de incluir todos os erros necessários verificação,
+incluindo a garantia de que o arquivo fonte exista. Uma vez que você tenha projetado e testado
+corretamente o programa, se você usou um SO que o suporta, execute o programa usando um
+utilitário que monitore o sistema e mostre as chamadas de sistema. Os sistemas Linux fornecem
+o utilitário strace. Exemplo em Linux: strace ./CopiaArquivo – CopiaArquivo é o nome do
+executável. Como os sistemas Windows não fornecem tal ferramenta, você terá que rastrear
+através da versão Windows deste programa usando um debug. */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -30,6 +41,7 @@ int main(){
     strcpy(caminho_destino, buffer); // copia do buffer para caminho_destino
     destino = fopen(caminho_destino, "w"); // gera arquivo novo para copiar origem
 
+    
 
     fclose(origem);
     fclose(destino);
