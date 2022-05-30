@@ -38,7 +38,8 @@ int main(){
         result = fgets(buffer, 100, origem); 
         if(result){
             // se foi possivel ler
-            printf("linha %d : %s", i, buffer);
+            printf("%s", buffer);
+            fprintf(destino, "%s", buffer);
             i++;
         }
     }
