@@ -7,3 +7,8 @@ void myPrintHelloMake(void) {
 
   return;
 }
+
+void printHi(){
+  printf("Hi!!!\n");
+  return;
+}
