@@ -9,6 +9,15 @@ nenhum outro comando que não seja o comando ls */
 #include <stdlib.h>
 #include <string.h>
 
+void mostrar_comando(){
+    printf("------COMANDOS------\n");
+    printf("");
+}
+
+void (char comando[]){
+
+}
+
 int main(){
     // ler comando 
     char comando[10000];
