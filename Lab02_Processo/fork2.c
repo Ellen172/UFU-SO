@@ -23,7 +23,8 @@ int main(){
    }
    else /* acoes do pai */
    {
-       wait(NULL);  
+       //wait(NULL);  
+       sleep(10);
        printf("As luzes comecaram a se apagar para mim, %d\n",getpid()) ;
        printf("Minha hora chegou : adeus, %d, meu filho\n",pid) ;
        /* e o pai morre de causas naturais */ 

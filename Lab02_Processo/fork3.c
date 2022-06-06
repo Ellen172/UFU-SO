@@ -12,6 +12,7 @@ int main()
    if (pid == 0) { /*Processo Filho*/
        printf("\n filho: %d \n", (int) getpid()); 
        value += 15;
+       printf("value filho: %d\n", value);
        return(0);
 
     }
@@ -20,6 +21,7 @@ int main()
 	wait(NULL);
         printf("\n Pai: %d \n", (int) getpid()); 
 	
+       	printf("value pai: %d\n", value);
 	return(0);
     }
 }
