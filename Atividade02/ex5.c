@@ -28,7 +28,7 @@ int main(){
     struct processo prog[5];
     int i=0;
     while(!feof(tarefas)){
-        // lê do arquivo
+        //lê do arquivo
         fscanf(tarefas, "%s %d", prog[i].nome, &prog[i].cpuBurst);
         i++;
     }
@@ -57,10 +57,10 @@ int main(){
     }
 
     if(tipo == 1){
-        //executar FCFS
+        //TO DO: executar FCFS
     }
     else {
-        //executar RR (q=5)
+        //TO DO: executar RR (q=5)
     }
 
     return 0;

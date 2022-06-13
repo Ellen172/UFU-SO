@@ -15,13 +15,15 @@ void mostrar_comando(){
 }
 
 void (char comando[]){
-
+    // TO DO: executar ao menos 5 comandos 
 }
 
 int main(){
     // ler comando 
     char comando[10000];
     scanf("%s", comando);
+
+    //TO DO: dividir string de acordo com comando
 
     // executar comando
     if(strcmp(comando, "mv"))
